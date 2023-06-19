@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="gal_comments">
+	<insert id="insert" parameterType="commentsvo">
+		<selectKey keyProperty="comments_no" resultType="long" order="BEFORE">
+			select gal_comments_seq.nextval from dual
+		</selectKey>
+	
+		<![CDATA[
+			insert into gal_comments values(#{comments_no}, #{content}, sysdate, #{user_no}, #{gallery_no})
+		]]>
+	</insert>
+	
+	<select id="getByNo" parameterType="long" resultType="commentsvo">
+		<![CDATA[
+			select A.comments_no, B.id, A.content, to_char(A.reg_date, 'yyyy-mm-dd') as reg_date, A.user_no, A.gallery_no 
+			from gal_comments A, member B 
+			where A.user_no = B.user_no and A.comments_no = #{no}
+		]]>
+	</select>
+	
+	<select id="getList" resultType="commentsvo">
+		<![CDATA[
+			select A.comments_no, B.id, A.content, to_char(A.reg_date, 'yyyy-mm-dd') as reg_date, A.user_no, A.gallery_no 
+			from gal_comments A, member B 
+			where A.user_no = B.user_no order by A.comments_no desc
+		]]>
+	</select>
+	
+	<delete id="delete" parameterType="long">
+		<![CDATA[
+			delete from gal_comments where comments_no = #{no}
+		]]>
+	</delete>
+	
+	<select id="getTotalCount" parameterType="long" resultType="long">
+	   <![CDATA[
+	   		select count(*) from gal_comments where gallery_no = #{gallery_no}	
+	   ]]>
+	</select>
+	
+</mapper>

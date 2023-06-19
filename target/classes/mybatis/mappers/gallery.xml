@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="gallery">
+	<insert id="insert" parameterType="galleryvo">
+		<selectKey keyProperty="gallery_no" resultType="long" order="BEFORE">
+			select gallery_seq.nextval from dual
+		</selectKey>
+	
+		<![CDATA[
+			insert into gallery values(#{gallery_no}, #{content}, sysdate, #{user_no}, #{orgFileName}, #{saveFileName}, #{fileExtName}, #{fileSize})
+		]]>
+	</insert>
+	
+	<select id="getByNo" parameterType="long" resultType="galleryvo">
+		<![CDATA[
+			select A.gallery_no, B.id, A.content, to_char(A.reg_date, 'yyyy-mm-dd') as reg_date, A.user_no, A.savefilename 
+			from gallery A, member B 
+			where A.user_no = B.user_no and A.gallery_no = #{no}
+		]]>
+	</select>
+	
+	<select id="getList" parameterType="integer" resultType="galleryvo">
+		<![CDATA[
+		select *
+		from
+		(select c.*, rownum as rn from (select A.gallery_no, B.id, A.content, to_char(A.reg_date, 'yyyy-mm-dd') as reg_date, A.user_no, A.savefilename 
+			 from gallery A, member B 
+			 where A.user_no = B.user_no order by A.gallery_no desc) C )
+			 where (#{page }-1)*5+1 <= rn and rn <= #{page }*5
+		]]>
+	</select>
+	
+	<select id="getComments" parameterType="long" resultType="commentsvo">
+		<![CDATA[
+		select A.comments_no, B.id, A.content, to_char(A.reg_date, 'yyyy-mm-dd') as reg_date, A.user_no, A.gallery_no 
+			from gal_comments A, member B 
+			where A.user_no = B.user_no and A.gallery_no = #{no} order by A.comments_no desc
+		]]>
+	</select>
+	
+	<delete id="deleteComments" parameterType="long">
+		<![CDATA[
+			delete from gal_comments where gallery_no = #{no}
+		]]>
+	</delete>
+	
+	<delete id="delete" parameterType="long">
+		<![CDATA[
+			delete from gallery where gallery_no = #{no}
+		]]>
+	</delete>
+</mapper>

@@ -1,0 +1,195 @@
+@CHARSET "UTF-8";
+@import "ysite.css";
+
+#content #gallery {
+	padding: 20px;
+	min-height: 590px;
+}
+
+.upload {
+	width: 450px; 
+	background-color: #ffffff;
+	margin: 0 auto;
+}
+
+#upload_top {
+	height: 40px;
+	background-color: #337ab7;
+}
+
+#upload_top ul {
+	overflow: hidden;
+	margin: 0;
+}
+
+#upload_top ul li {
+	float: right;
+}
+
+#upload_top ul li i,
+#upload_top ul li label {
+	line-height: 40px;
+	padding:0 10px;
+	font-size: 20px;
+	color: #ffffff;
+	transition-duration: 0.2s;
+}
+
+#upload_top ul li i:hover,
+#upload_top ul li label:hover {
+	color: #555;
+	cursor: pointer;
+}
+
+.writer span {
+	color: #ccc;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.upload_content {
+	clear: both;
+	padding: 10px;
+}
+
+.upload_content textarea {
+	display: inline;	
+	resize: none;
+}
+
+.upload_img {
+	text-align: center;
+	height: 240px;
+	margin-top: 10px;
+}
+
+.upload_img div {
+	width: 430px;
+	height: 240px;
+	border: 1px dashed #ccc;	
+}
+
+.upload_img label {
+	color: #ccc;
+	font-size: 80px;
+	line-height: 230px;	
+	transition-duration: 0.2s;
+}
+
+.upload_img label:hover {
+	color: #337ab7;
+	cursor: pointer;	
+}
+
+.upload_img img {
+	max-width: 430px;
+	max-height: 240px; 
+}
+
+#upload_list .upload {
+	margin-top: 20px;
+}
+
+.upload .upload_bar {
+	border-left: 5px solid #337ab7;
+}
+
+.upload .writer {
+	line-height: 42px;
+	display: inline-block;
+	padding:0 10px;
+	color: #555;
+	font-weight: bold;
+} 
+
+.upload .delete_gal {
+	float: right;
+}
+
+.upload .delete_gal i {
+	line-height: 40px;
+	padding:0 10px;
+	font-size: 20px;
+	transition-duration: 0.2s;
+	color: #eee;
+}
+
+.upload .delete_gal i:hover {
+	color: red;
+	cursor: pointer;
+}
+
+#upload_list .image_comment {
+	width: 430px;
+	margin-bottom: 30px;
+	word-break: break-all;
+}
+
+.comments_btn {
+	font-size: 12px;
+	float: right;
+	padding: 5px 0;
+	color: #ccc;
+	transition-duration: 0.2s; 
+}
+
+.comments_btn:hover {
+	color: #555;
+	cursor: pointer;
+}
+
+.comments_btn span {
+	vertical-align: text-top;
+}
+
+.comment {
+	border-top: 1px solid white;
+}
+
+.comments {	
+	background-color: #eee;
+}
+
+.comments > div:nth-child(1) {
+	
+	padding: 5px;
+}
+
+.comments_list {
+	width: 100%;
+	font-size: 12px;
+}
+
+.comments_list th,
+.comments_list td {
+	padding: 5px; 
+}
+
+.comments_list span {
+	color: #aaa;
+	font-style: italic;
+	font-size: 10px;
+}
+
+.gal_comment {
+	width: 100%;
+	word-break: break-all;	
+}
+
+.delete_comments {
+	vertical-align: baseline;	
+}
+
+.delete_comments i { 
+	color: #ccc;
+	transition-duration: 0.2s;
+}
+
+.delete_comments i:hover {
+	color: red;
+	cursor: pointer;
+}
+
+.clear {
+	clear:both; height:0; overflow:hidden;
+}

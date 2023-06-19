@@ -1,0 +1,212 @@
+@CHARSET "UTF-8";
+
+@import "ysite.css";
+
+#content #board {
+	padding: 20px;
+	min-height: 590px;
+}
+
+table {
+	width: 100%;	
+}
+
+td, th {
+	padding: 10px 5px;
+}
+
+#board_top {
+	height: 40px;
+	background-color: #337ab7;
+}
+
+#board_top ul {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+#board_top ul li {
+	float: right;
+}
+
+#board_top ul li a,
+#board_top ul li i,
+#board_top ul li span {
+	line-height: 40px;
+	padding: 0 10px;
+	font-size: 20px;
+	color: #ffffff;
+	transition-duration: 0.2s;
+}
+
+#board_top ul li a:hover,
+#board_top ul li i:hover,
+#board_top ul li span:hover {
+	color: #555;
+	cursor: pointer;
+}
+
+#board_top #search form {
+	display: inline; 
+}
+
+#board_top #search form input {	
+	padding: 5px;
+	border-style: none;
+	height: 24px;
+	vertical-align: text-bottom;
+}
+
+#board_content {
+	color: #555;
+}
+
+#board_content div {
+	padding: 10px;
+	min-height: 420px;
+}
+
+#board_content div h5 {
+	font-style: italic;
+}
+
+#board_content div h5 span {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#board_content div table th {
+	width: 180px;
+	text-align: center;
+}
+
+#board_content div input {
+	width: 480px;
+}
+
+#board_content div textarea {
+	width: 480px;
+	height: 300px;
+	resize: none;
+}
+
+#comments {
+	margin-top: 15px;
+	color: #555;
+	border-left: 5px solid #337ab7;
+}
+
+#comments table th {
+	width: 140px;
+	text-align: center;
+}
+
+#comments textarea {
+	width: 520px;
+	resize: none;
+}
+
+#comments button {
+	margin-right: 9px;
+}
+
+#comments_list span {
+	font-weight: normal;
+	font-style: italic;
+	font-size: 10px;
+}
+
+#comments_total {
+	color: #aaa;
+}
+
+.comment {
+	border-top: 1px dashed #ddd;
+	word-break: break-all;
+}
+
+.delete_comment {
+	width: 80px;
+	vertical-align: baseline;
+}
+
+.delete_comment a {
+	color: #ccc;
+	transition-duration: 0.2s;
+}
+
+.delete_comment a:hover {
+	color: red;
+}
+
+#board_list th:nth-child(1) {
+	width: 50px;
+}
+
+#board_list th:nth-child(3) {
+	width: 100px;
+}
+
+#board_list th:nth-child(4) {
+	width: 100px;
+}
+
+#board_list th:nth-child(5) {
+	width: 55px;
+}
+
+#board_list tr {
+	border-bottom: 1px solid #eee;
+}
+
+#board_list tr:hover {
+	background-color: #eee;
+}
+
+#board_list tr:nth-child(1):hover {
+	background-color: #ffffff;
+}
+
+#board_bottom {
+	text-align: center;
+	margin-top: 25px;
+}
+
+ul.pagination {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+ul.pagination li {
+	display: inline;
+}
+
+ul.pagination li a {
+	color: black;
+	float: left;
+	padding: 3px 6px;
+	text-decoration: none;
+	transition: background-color .2s;
+}
+
+ul.pagination li a.active {
+	background-color: #337ab7;
+	color: white;
+}
+
+ul.pagination li a:hover:not(.active) {
+	background-color: #eee;
+}
+
+.btnIcon {
+	border-style: none;
+	background-color: rgba( 255, 255, 255, 0 ) !important;
+	padding: 0;
+	outline-color: none;
+}
+
+.btnIcon:focus {
+	outline-color: rgba( 255, 255, 255, 0 ) !important;
+}
